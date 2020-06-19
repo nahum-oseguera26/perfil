@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hotel paradais</title>
+</head>
+<body>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<a href="{% url 'tienda:listar_clientes'%}">listar clientes</a>
+	<a href="{% url 'tienda:listar_cliente'%}">perfil del cliente</a>
+	<a href="{% url 'tienda:listar_habitaciones'%}">listado de habitaciones</a>
+	{% block cuerpo %}
+	{% endblock %}
+</body>
+</html>

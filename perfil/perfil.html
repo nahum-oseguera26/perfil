@@ -1,0 +1,44 @@
+% extends 'base.html' %}
+
+{% block cuerpo %}
+    <h1 align="center">perfil del cliente</h1>
+    <div> id="perfil_cliente">
+        <strong>registro No: </strong> {{ cliente.identidad }} <br>
+        <strong>nombre completo: </strong> {{ cliente.nombre_completo }} <br>
+        <strong>fecha de nacimiento </strong> {{ cliente.nombre_completo }} <br>
+    </div>
+    <div>
+    {% if facturas %}
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>cliente</th>
+                    <th>fecha_proceso</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for factura in facturas %}
+                    <tr>
+                        <td> {{ forloop.counter }}</td>
+                        <td> {{ factura.cliente}}</td>
+                        <td> {{ factura.fecha_proceso}}</td>
+                        <td>
+                            <a href="{% url 'tienda:ver_factura' factura.factura %}">
+                            <button class="btn light-blue darken-4">
+                            <i class="large material-icons">info_outtline</i>
+                        </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>
+            <strong>
+                No existen facturas en la base de datos
+            </strong>
+        </p>
+    {% endif %}
+    </div>
+{% endblock %}
